@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feadd1ab591e6c94aa7d8bf32d9bd548, type: 3}
+  m_Name: TestUI
+  m_EditorClassIdentifier: 
+  uiID: TestUI
+  maxActiveTime: 180
+  defaultActiveTime: 60
+  loadMode: Resources
+  anchoredPosition3D: {x: 4, y: -0.0000076294, z: 0}
+  sizeDelta: {x: 238.4, y: 125.1}

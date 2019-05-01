@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <UICite UIID="LobbyUI" ActiveTime="-1" Parent="Canvas" />
+  <UICite UIID="BgUI" ActiveTime="-1" Parent="Canvas" />
+  <UICite UIID="LoginUI" ActiveTime="-1" Parent="Canvas" />
+  <UICite UIID="SceneLoadUI" ActiveTime="-1" Parent="Canvas" />
+  <UICite UIID="GamingUI" ActiveTime="-1" Parent="Canvas" />
+  <UICite UIID="ToolBarUI" ActiveTime="-1" Parent="Canvas" />
+  <UICite UIID="InterphoneUI" ActiveTime="-1" Parent="Canvas" />
+  <UICite UIID="ToolBackUI" ActiveTime="-1" Parent="Canvas" />	
+  <UICite UIID="MovementUI" ActiveTime="-1" Parent="Canvas" />	
+  <UICite UIID="SpecialPlaneUI" ActiveTime="-1" Parent="Canvas" />	
+  <UICite UIID="IBPDialUI" ActiveTime="-1" Parent="Canvas" />	
+  <UICite UIID="WordingUI" ActiveTime="-1" Parent="Canvas" />	
+  <UICite UIID="ActorShowUI" ActiveTime="-1" Parent="Canvas" />	
+</root>
