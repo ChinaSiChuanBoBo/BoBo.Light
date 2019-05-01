@@ -282,6 +282,7 @@
         }
     }
 
+    //.ini文件操作类
     public class IniFileHelper
     {
         private string m_fileName;
