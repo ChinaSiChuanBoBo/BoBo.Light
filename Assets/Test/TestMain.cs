@@ -13,19 +13,25 @@ public class TestMain : MonoBehaviour
 
     public Image imageObject;
 
- 
+
+
+    [ShowOnly]
+    [SerializeField]
+    protected int num;
 
 
     void OnGUI()
     {
         if (GUILayout.Button("加载TestUI"))
         {
-            UIFacade.NewFacade<TestUIFacade>();
+            num = 12;
+            //  UIFacade.NewFacade<TestUIFacade>();
         }
 
         if (GUILayout.Button("移除TestUI"))
         {
-            UIFacade.RemoveFacade<TestUIFacade>();
+            num = 13;
+            // UIFacade.RemoveFacade<TestUIFacade>();
         }
     }
 }
