@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PureMVC.Patterns;
+using BoBo.Light.Base;
 
 public class TestUI_Command : SimpleCommand
 {
@@ -11,8 +12,7 @@ public class TestUI_Command : SimpleCommand
         {
             case EventID.ChangeColor:
                 {
-                    var scriptInstance = Camera.main.GetComponent<TestMain>();
-                    scriptInstance.imageObject.color = (Color)notification.Param;
+                    BaseNode.Broadcast(0, EventID.ChangeColor, notification.Param);
                 } break;
         }
     }
