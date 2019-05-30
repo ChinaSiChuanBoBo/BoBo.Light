@@ -2,36 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BoBo.Light.UI;
+using BoBo.Light.Base;
 using UnityEngine.UI;
 
 
 
 
-public class TestMain : MonoBehaviour
+public class TestMain : BaseNode
 {
-
-
     public Image imageObject;
 
+    void Start()
+    {
+        Init();
+    }
 
-
-    [ShowOnly]
-    [SerializeField]
-    protected int num;
-
+    void OnDestroy()
+    {
+        Clearup();
+    }
 
     void OnGUI()
     {
         if (GUILayout.Button("加载TestUI"))
         {
-            num = 12;
-            //  UIFacade.NewFacade<TestUIFacade>();
+            UIFacade.NewFacade<TestUIFacade>();
         }
 
         if (GUILayout.Button("移除TestUI"))
         {
-            num = 13;
-            // UIFacade.RemoveFacade<TestUIFacade>();
+            UIFacade.RemoveFacade<TestUIFacade>();
         }
+    }
+
+    public override IList<int> ListeningNotifications()
+    {
+        return new int[] { EventID.ChangeColor };
+    }
+
+    public override void MessageHandler(int eventID, object param, object extra)
+    {
+        switch (eventID)
+        {
+            case EventID.ChangeColor:
+                {
+                    imageObject.color = (Color)param;
+                } break;
+            default: break;
+        }
+    }
+
+    public override int NodeLevel
+    {
+        get { return 0; }
     }
 }
