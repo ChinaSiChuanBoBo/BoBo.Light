@@ -35,7 +35,7 @@
             }
         }
 
-        internal void Open(object param,object extra)
+        internal void Open(object param, object extra)
         {
             this.State = UIState.Initial;
             //
@@ -60,7 +60,7 @@
                 }
             }
             //
-            OnOpened(param,extra);
+            OnOpened(param, extra);
             this.gameObject.SetActive(true);
             this.State = UIState.Update;
             //接入MVC消息框架
@@ -107,7 +107,7 @@
         {
 
         }
-      
+
         /// <summary>
         /// 关闭UI时调用
         /// </summary>
@@ -299,6 +299,14 @@
                 }
             }
         }
+
+        //用于反射调用
+        protected void HandleNotification(INotification notification)
+        {
+            (this as IMediator).HandleNotification(notification);
+        }
+
+
         #endregion
     }
 }

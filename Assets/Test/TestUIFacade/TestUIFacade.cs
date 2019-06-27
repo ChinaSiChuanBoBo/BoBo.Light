@@ -11,11 +11,13 @@ public class TestUIFacade : UIFacade
     protected override void OnInit()
     {
         RegisterCommand(EventID.ChangeColor, typeof(TestUI_Command));
+        RegisterProxy(new TestProxy());
     }
 
     protected override void OnDestroy()
     {
         RemoveCommand(EventID.ChangeColor);
+        RemoveProxy(TestProxy.NAME);
     }
 
 

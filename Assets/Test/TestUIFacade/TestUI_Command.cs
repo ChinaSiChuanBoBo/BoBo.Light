@@ -12,9 +12,11 @@ public class TestUI_Command : SimpleCommand
         {
             case EventID.ChangeColor:
                 {
-                    BaseNode.Broadcast(0, EventID.ChangeColor, notification.Param);
+                    var proxy = RetrieveProxy(TestProxy.NAME) as TestProxy;
+                    if (null != proxy)
+                        proxy.SetColor();
 
-                 
+
                 } break;
         }
     }
