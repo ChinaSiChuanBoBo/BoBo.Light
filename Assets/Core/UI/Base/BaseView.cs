@@ -195,14 +195,6 @@
             return true;
         }
 
-        //public void SetPage(string pageName, int key, object param = null, object extra = null)
-        //{
-        //    foreach (UIPage page in m_openedPages)
-        //    {
-        //        if (page.Name == pageName.ToLower() && page.NotifyActive)
-        //            page.SetPage(key, param, extra);
-        //    }
-        //}
 
         private void AddUIObserver(IObserver observer)
         {

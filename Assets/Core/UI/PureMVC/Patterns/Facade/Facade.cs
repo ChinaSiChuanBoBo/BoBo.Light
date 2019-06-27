@@ -15,7 +15,7 @@
             GetModel.RegisterProxy(proxy);
         }
 
-        public IProxy RetrieveProxy(string proxyName)
+        internal static IProxy RetrieveProxy(string proxyName)
         {
             return GetModel.RetrieveProxy(proxyName);
         }

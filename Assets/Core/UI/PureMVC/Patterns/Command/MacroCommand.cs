@@ -6,7 +6,7 @@
     using PureMVC.Interfaces;
     using PureMVC.Patterns;
 
-    public class MacroCommand :  ICommand
+    internal class MacroCommand :  ICommand
     {
         public MacroCommand()
         {

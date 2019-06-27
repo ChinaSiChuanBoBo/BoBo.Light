@@ -13,6 +13,8 @@ public class TestUI_Command : SimpleCommand
             case EventID.ChangeColor:
                 {
                     BaseNode.Broadcast(0, EventID.ChangeColor, notification.Param);
+
+                 
                 } break;
         }
     }
