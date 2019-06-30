@@ -32,9 +32,25 @@ public class TestUI : BaseView
         m_blueButton = null;
     }
 
+    public override void HandleNotify(int id, object param, object extra)
+    {
+        switch (id)
+        {
+            case EventID.DisplayColor:
+                {
+                    Debug.Log("DisplayColor");
+                } break;
+            default: break;
+        }
+    }
 
     public override string GetUiID()
     {
         return "TestUI";
+    }
+
+    public override IList<int> NotifierInterests()
+    {
+        return new int[] { EventID.DisplayColor };
     }
 }

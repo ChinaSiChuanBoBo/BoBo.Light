@@ -20,13 +20,6 @@
         }
 
 
-        //public bool PageActivity
-        //{
-        //    get
-        //    {
-        //        return this.gameObject.activeSelf;
-        //    }
-        //}
 
         public string Name
         {
@@ -38,15 +31,6 @@
             }
         }
 
-        //public virtual void SetPage(int key, object data, object extra)
-        //{
-
-        //}
-
-        //public void SetPage(string pageName, int key, object data, object extra)
-        //{
-        //    uiRoot.SetPage(pageName, key, data, extra);
-        //}
 
         public bool PopPage(string pageName, object param = null, object extra = null, bool hidePre = true)
         {
@@ -56,7 +40,7 @@
         public bool HidePage(string pageName)
         {
             return uiRoot.HidePage(pageName);
-        }  
+        }
 
         protected virtual void OnPopup(object param, object extra)
         {

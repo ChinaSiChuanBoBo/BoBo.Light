@@ -30,7 +30,7 @@
             }
 
             Type t = context.GetType();
-            BindingFlags f = BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase;
+            BindingFlags f = BindingFlags.Instance | BindingFlags.Public |BindingFlags.NonPublic| BindingFlags.IgnoreCase;
             MethodInfo mi = t.GetMethod(method, f);
             mi.Invoke(context, new object[] { notification });
         }

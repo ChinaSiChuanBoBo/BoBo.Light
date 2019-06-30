@@ -5,7 +5,7 @@
     using PureMVC.Interfaces;
     using PureMVC.Patterns;
 
-    public class SimpleCommand :ICommand,INotifier
+    public class SimpleCommand : ICommand, INotifier
     {
         public virtual void Execute(INotification notification)
         {
@@ -16,5 +16,12 @@
         {
             Facade.NotifyObservers(new Notification(id, param, extra));
         }
+
+
+        public IProxy RetrieveProxy(string proxyName)
+        {
+            return Facade.RetrieveProxy(proxyName);
+        }
+
     }
 }
