@@ -532,7 +532,8 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: Patch_5_6X
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 0

@@ -6,6 +6,8 @@
     using UnityEngine.UI;
     using UnityEngine.EventSystems;
     using UnityEditor.SceneManagement;
+
+
     public class UIToolsEditor : Editor
     {
         [MenuItem("BoBo.Light/UITools/生成Cavas模板")]
@@ -30,8 +32,11 @@
                 uiCamera.cullingMask = 0x01 << uiLayer;
                 uiCamera.orthographic = true;
                 uiCamera.useOcclusionCulling = false;
+
+#if Patch_5_6X
                 uiCamera.allowHDR = false;
                 uiCamera.allowMSAA = false;
+#endif
                 //设置屏幕适配
                 CanvasScaler scalerComponent = canvas.AddComponent<CanvasScaler>();
                 scalerComponent.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
