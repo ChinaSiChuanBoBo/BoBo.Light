@@ -10,7 +10,7 @@
 
     public class UIToolsEditor : Editor
     {
-        [MenuItem("BoBo.Light/UITools/生成Cavas模板")]
+        [MenuItem("BoBo.Light/UITools/生成Canvas模板")]
         private static void CreateCavasTemplate()
         {
             GameObject canvas = GameObject.Find("Canvas");
@@ -40,7 +40,9 @@
                 //设置屏幕适配
                 CanvasScaler scalerComponent = canvas.AddComponent<CanvasScaler>();
                 scalerComponent.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-                scalerComponent.referenceResolution = new Vector2(Screen.width, Screen.height);
+                int screenWidth, screenHeight;
+                GetGameViewSize(out screenWidth, out screenHeight);
+                scalerComponent.referenceResolution = new Vector2(screenWidth, screenHeight);
                 scalerComponent.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
                 scalerComponent.matchWidthOrHeight = 1;
                 //
@@ -75,5 +77,30 @@
         }
 
         public const string prefabPathAtEditor = "Assets/Resources/UI/Prefabs";
+
+        private static void GetGameViewSize(out int width, out int height)
+        {
+            System.Type scriptType = System.Type.GetType("UnityEditor.GameView,UnityEditor");
+            System.Reflection.MethodInfo getMainGameView
+                = scriptType.GetMethod("GetMainGameView",
+                System.Reflection.BindingFlags.NonPublic |
+                System.Reflection.BindingFlags.Static);
+            var gameView = (UnityEditor.EditorWindow)getMainGameView.Invoke(null, null); ;
+            var currentGameViewSizeProperty
+                = gameView.GetType().GetProperty(
+                "currentGameViewSize",
+                System.Reflection.BindingFlags.NonPublic |
+                System.Reflection.BindingFlags.Instance);
+            var gvsize = currentGameViewSizeProperty.GetValue(gameView, new object[0] { });
+            var gvSizeType = gvsize.GetType();
+            height
+                = (int)gvSizeType.GetProperty("height",
+                System.Reflection.BindingFlags.Public |
+                System.Reflection.BindingFlags.Instance).GetValue(gvsize, new object[0] { });
+            width
+                = (int)gvSizeType.GetProperty("width",
+                System.Reflection.BindingFlags.Public |
+                System.Reflection.BindingFlags.Instance).GetValue(gvsize, new object[0] { });
+        }
     }
 }
