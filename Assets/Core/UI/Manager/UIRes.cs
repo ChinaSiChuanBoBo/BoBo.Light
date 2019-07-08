@@ -205,7 +205,7 @@
         }
 
         //当前是不是触摸在UI上
-        public bool TouchUIAtPresent(int layerMask)
+        public bool TouchUIAtPresent(int layerMask=-1)
         {
             PointerEventData eventData = new PointerEventData(m_eventSystemComponent);
             eventData.pressPosition = Input.mousePosition;
