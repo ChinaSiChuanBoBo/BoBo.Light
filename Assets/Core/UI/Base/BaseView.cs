@@ -152,6 +152,16 @@
             m_openedPages.Clear();
         }
 
+        public UIPage GetPage(string pageName)
+        {
+            UIPage pageItem=null;
+            if (null != m_pages)
+            {
+                m_pages.TryGetValue(pageName.ToLower(), out pageItem);
+            }
+            return pageItem;
+        }
+
         public bool PopPage(string pageName, object param = null, object extra = null, bool hidePre = true)
         {
             UIPage page;
