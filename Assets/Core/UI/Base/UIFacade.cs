@@ -47,6 +47,11 @@
             OnDestroy();
         }
 
+        public static BaseView RetrieveView(string uiID)
+        {
+            return UIRes.Instance.RetrieveView(uiID);
+        }
+
         public static void NewFacade<T>(object param = null, object extra = null) where T : UIFacade
         {
             System.Type type = typeof(T);
@@ -94,7 +99,7 @@
 
         public static bool TouchUIAtPresent(int layerMask)
         {
-          return  UIRes.Instance.TouchUIAtPresent(layerMask);
+            return UIRes.Instance.TouchUIAtPresent(layerMask);
         }
 
         public static Vector3 ScreenPointToWorldPointInRectangle(Vector2 screenPos)

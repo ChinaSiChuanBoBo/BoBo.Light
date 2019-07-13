@@ -133,6 +133,18 @@
             return posInRectangle;
         }
 
+        public BaseView RetrieveView(string uiID)
+        {
+            if (m_uiElements.ContainsKey(uiID))
+            {
+                UIElement element = m_uiElements[uiID];
+                return element.UiInstance;
+            }
+
+            return null;
+
+        }
+
         public BaseView OpenUI(string uiID, object param = null, object extra = null)
         {
             if (m_uiElements.ContainsKey(uiID))
@@ -205,7 +217,7 @@
         }
 
         //当前是不是触摸在UI上
-        public bool TouchUIAtPresent(int layerMask=-1)
+        public bool TouchUIAtPresent(int layerMask = -1)
         {
             PointerEventData eventData = new PointerEventData(m_eventSystemComponent);
             eventData.pressPosition = Input.mousePosition;

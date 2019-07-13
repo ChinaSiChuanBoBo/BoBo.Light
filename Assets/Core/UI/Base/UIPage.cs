@@ -5,6 +5,15 @@
     using BoBo.Light.Base;
     public abstract class UIPage : UIComponent
     {
+
+        public BaseView ViewRoot
+        {
+            get
+            {
+                return uiRoot;
+            }
+        }
+
         internal BaseView uiRoot;
 
         internal void Pop(object param, object extra)
