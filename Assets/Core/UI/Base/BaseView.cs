@@ -62,6 +62,7 @@
             //
             OnOpened(param, extra);
             this.gameObject.SetActive(true);
+            OnOpenLated();
             this.State = UIState.Update;
             //接入MVC消息框架
             Facade.RegisterMediator(this);
@@ -104,6 +105,12 @@
         /// 打开UI时,调用
         /// </summary>
         protected virtual void OnOpened(object param, object extra)
+        {
+
+        }
+
+        //UI显示出来后的 回调
+        protected virtual void OnOpenLated()
         {
 
         }
@@ -154,7 +161,7 @@
 
         public UIPage GetPage(string pageName)
         {
-            UIPage pageItem=null;
+            UIPage pageItem = null;
             if (null != m_pages)
             {
                 m_pages.TryGetValue(pageName.ToLower(), out pageItem);
