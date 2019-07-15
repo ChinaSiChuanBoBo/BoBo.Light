@@ -21,19 +21,25 @@
             if (!m_eventTable.ContainsKey(cmdLevel))
             {
                 var eventList = new Dictionary<int, Delegate>();
-                eventList.Add(eventID, null);
+                //  eventList.Add(eventID, null);
                 m_eventTable.Add(cmdLevel, eventList);
             }
 
+
             Delegate d;
             m_eventTable[cmdLevel].TryGetValue(eventID, out d);
-            if (d != null && d.GetType() != listenerBeingAdded.GetType())
+            if (null == d)
+            {
+                m_eventTable[cmdLevel].Add(eventID, null);
+            }
+            else if (d != null && d.GetType() != listenerBeingAdded.GetType())
             {
                 throw new ListenerException(string.Format(
                  @"Attempting to add listener with inconsistent signature for event type {0}.
                   Current listeners have type {1} and listener being added has type {2}",
                     eventID, d.GetType().Name, listenerBeingAdded.GetType().Name));
             }
+
         }
 
         private static bool OnListenerRemoving(int cmdLevel, int eventID, Delegate listenerBeingRemoved)
