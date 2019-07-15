@@ -60,9 +60,9 @@
                 }
             }
             //
-            OnOpened(param, extra);
+          
             this.gameObject.SetActive(true);
-            OnOpenLated();
+            OnOpened(param, extra);
             this.State = UIState.Update;
             //接入MVC消息框架
             Facade.RegisterMediator(this);
@@ -109,11 +109,7 @@
 
         }
 
-        //UI显示出来后的 回调
-        protected virtual void OnOpenLated()
-        {
-
-        }
+      
 
         /// <summary>
         /// 关闭UI时调用

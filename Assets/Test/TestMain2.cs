@@ -8,7 +8,7 @@ public class TestMain2 : BaseNode
 
     void Start()
     {
-        Init();
+        NodeInit();
     }
 
     void OnDestroy()

@@ -14,7 +14,7 @@ public class TestMain : BaseNode
 
     void Start()
     {
-        Init();
+        NodeInit();
     }
 
     void OnDestroy()

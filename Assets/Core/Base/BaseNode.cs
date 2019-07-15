@@ -16,7 +16,7 @@
             Messenger.Broadcast<int, object, object>(cmdLevel, eventID, eventID, param, extra);
         }
 
-        public void Init()
+        public void NodeInit()
         {
             var notifications = ListeningNotifications();
             if (null != notifications && notifications.Count > 0)
@@ -27,7 +27,7 @@
                 }
             }
 
-            OnInit();
+            OnNodeInit();
         }
 
         public void Clearup()
@@ -44,7 +44,7 @@
             OnClearup();
         }
 
-        public virtual void OnInit()
+        public virtual void OnNodeInit()
         {
 
         }
