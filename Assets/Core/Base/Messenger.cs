@@ -21,7 +21,6 @@
             if (!m_eventTable.ContainsKey(cmdLevel))
             {
                 var eventList = new Dictionary<int, Delegate>();
-                //  eventList.Add(eventID, null);
                 m_eventTable.Add(cmdLevel, eventList);
             }
 

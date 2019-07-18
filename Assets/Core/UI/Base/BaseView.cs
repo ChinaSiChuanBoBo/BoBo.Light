@@ -59,8 +59,7 @@
                     AddUIObserver(uiComponentItem);
                 }
             }
-            //
-          
+            // 
             this.gameObject.SetActive(true);
             OnOpened(param, extra);
             this.State = UIState.Update;
