@@ -13,7 +13,7 @@ public class TestMain2 : BaseNode
 
     void OnDestroy()
     {
-        Clearup();
+        NodeClearup();
     }
 
 

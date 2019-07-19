@@ -19,7 +19,7 @@ public class TestMain : BaseNode
 
     void OnDestroy()
     {
-        Clearup();
+        NodeClearup();
     }
 
     void OnGUI()

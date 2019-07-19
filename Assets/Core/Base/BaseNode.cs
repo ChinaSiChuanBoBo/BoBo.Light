@@ -30,7 +30,7 @@
             OnNodeInit();
         }
 
-        public void Clearup()
+        public void NodeClearup()
         {
             var notifications = ListeningNotifications();
             if (null != notifications && notifications.Count > 0)
@@ -41,7 +41,7 @@
                 }
             }
 
-            OnClearup();
+            OnNodeClearup();
         }
 
         public virtual void OnNodeInit()
@@ -49,7 +49,7 @@
 
         }
 
-        public virtual void OnClearup()
+        public virtual void OnNodeClearup()
         {
 
         }
