@@ -108,7 +108,7 @@
 
         }
 
-      
+
 
         /// <summary>
         /// 关闭UI时调用
@@ -136,6 +136,10 @@
             if (UIState.Update == this.State)
             {
                 OnUpdate(Time.deltaTime);
+                for (int i = 0; i < m_openedPages.Count; ++i)
+                {
+                    m_openedPages[i].OnUpdate(Time.deltaTime);
+                }
             }
         }
 

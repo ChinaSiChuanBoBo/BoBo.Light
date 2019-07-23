@@ -61,6 +61,11 @@
 
         }
 
+        public virtual void OnUpdate(float deltatime)
+        {
+
+        }
+
         private string m_pageName = "";
     }
 }
