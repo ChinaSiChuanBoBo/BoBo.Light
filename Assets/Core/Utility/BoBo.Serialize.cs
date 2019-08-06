@@ -7,7 +7,7 @@
     using UnityEngine;
     using System.Collections.Generic;
     using System.Collections;
-    
+
     public sealed class XMLSerializeTool
     {
         /// <summary>
@@ -56,6 +56,15 @@
             }
         }
 
+
+        public static System.Object Deserialize(string path)
+        {
+            using (FileStream fileStream = new FileStream(path, FileMode.Open))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                return bf.Deserialize(fileStream);
+            }
+        }
     }
 
     public sealed class JsonSerializeTool
@@ -129,5 +138,5 @@
         }
     }
 
-    
+
 }
